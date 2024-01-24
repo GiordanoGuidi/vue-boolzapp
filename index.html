@@ -64,26 +64,12 @@
                     </div>
                     <!--BOTTOM SIDEBARE-->
                     <div class="bottom-sidebar">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem repudiandae, tempore, possimus repellat, saepe voluptatum perferendis iusto blanditiis accusamus cupiditate sunt corrupti? Esse, est harum. Consectetur nemo maxime eos est.
-                        Harum, ea dolore. Perspiciatis magni ipsum pariatur accusantium laudantium dignissimos molestiae explicabo sed, placeat ab consectetur, esse quidem adipisci iusto ipsam eveniet odit aliquid. Odio eaque quisquam ducimus voluptate itaque.
-                        Culpa facere sunt fugiat odio ullam fuga fugit numquam dicta harum, exercitationem ratione autem enim a tempore architecto ipsum nemo praesentium natus cumque deserunt? Quis beatae iure fugiat repudiandae ex.
-                        Neque inventore cum totam, eius facere tenetur vel atque dignissimos at asperiores voluptas maiores quibusdam sed a minima tempore sunt, esse praesentium quidem. Officiis et consectetur placeat explicabo voluptatem ducimus?
-                        Laudantium omnis voluptatem velit consectetur quos repellat voluptas delectus commodi dolore quasi fuga dolores beatae, est aut fugiat nisi, praesentium ut ex. Maxime maiores accusamus corrupti neque, debitis dolore ducimus.
-                        Animi voluptates officia tenetur, optio eius, perferendis doloremque obcaecati exercitationem consequuntur unde eaque, sit aspernatur quas id doloribus odio laborum quisquam aut saepe minus repellat repellendus quae quibusdam aliquam. Ex!
-                        Optio voluptas nisi quaerat totam rerum. Sed rem perferendis dicta quaerat provident facilis maiores tempora magni quas quibusdam sequi ut soluta, animi necessitatibus eum tempore earum dolor nemo, incidunt culpa.
-                        Et architecto dolores, rem quasi consequatur saepe maiores exercitationem inventore provident. Consectetur laudantium quaerat nisi ullam corporis. Placeat sapiente odit facilis excepturi, modi laudantium sit, ratione distinctio non sed temporibus.
-                        Neque officiis velit quibusdam asperiores quo aspernatur maiores eligendi similique hic nobis, vel quam. Quaerat voluptas reprehenderit cupiditate delectus vitae distinctio labore ipsum possimus repudiandae. Ipsum molestias ipsam sunt at.
-                        Quis incidunt sapiente eveniet officia cum voluptatibus sed. Amet nisi esse numquam modi? Nesciunt quidem culpa sequi! Eos repudiandae illo tenetur consequatur aliquid libero, iste, veritatis ipsa harum dolorum illum.
-                        Natus quo saepe possimus dicta recusandae quidem atque adipisci nulla asperiores enim totam corporis explicabo assumenda consectetur cumque vel, omnis nobis voluptas consequatur similique et modi dolor consequuntur laboriosam! Fugit.
-                        At debitis, sint deleniti earum, nulla architecto sit perferendis totam perspiciatis dolores ratione molestiae quas iure nam id provident ex ipsam voluptas consequatur illo. Facilis corporis doloremque repellendus natus officia?
-                        Eveniet maxime facere explicabo minus enim adipisci nemo maiores quo repellendus ducimus labore beatae nisi earum, eaque quis ipsam magnam consectetur provident! Aliquam quo beatae minus quod, illum iure maxime.
-                        Dolorum quasi, molestias, consectetur maiores minus error eaque aut velit hic suscipit iste, accusantium id pariatur repellendus? Sed autem, aliquam corrupti ipsum odio eos blanditiis culpa tempora quidem, dolorum molestiae?
-                        Doloremque, dolor blanditiis harum reprehenderit ea porro omnis, aliquam, repudiandae accusantium eius atque quasi? Commodi dicta nobis officia et suscipit ipsam assumenda, iusto ex, excepturi quidem quisquam nostrum voluptate! Harum!
-                        Itaque eum non suscipit incidunt tempora exercitationem blanditiis laborum magnam laboriosam accusamus temporibus veniam quisquam impedit aliquid aliquam cumque, inventore totam? Accusamus illum illo voluptatibus impedit tenetur. Unde, rerum adipisci.
-                        Accusamus deserunt repudiandae vero praesentium tenetur, fugit, alias, tempore quasi ex impedit officiis a aut sequi eaque facilis suscipit rerum in corporis sed blanditiis odio excepturi sunt aspernatur. Inventore, nobis.
-                        Atque corrupti, cum ab voluptate necessitatibus iste ut odit molestiae autem maiores sapiente consequatur sit temporibus deleniti voluptas eveniet recusandae nisi omnis deserunt id accusamus! Ad iure expedita vitae modi.
-                        Consequuntur ut, temporibus sunt deleniti commodi voluptatem odio quia natus, harum dolore ullam odit placeat officia iusto, voluptate magnam ipsam. Molestiae enim aspernatur, libero reiciendis facilis aliquam ex corporis ad?
-                        Non quibusdam quod magnam voluptates facere dicta alias autem, doloribus tempora sunt beatae, recusandae, quae voluptatem quos ab? Sequi, ducimus possimus molestias nisi nulla culpa unde ipsum sint velit deleniti.</p>
+                        <ul class="contacts-list list-unstyled mt-3">
+                            <li v-for="contact in contacts" class="mb-3">
+                                <img :src="`img/avatar${contact.avatar}.jpg`" alt="" class="ms-3 mb-2 bg-secondary">
+                                <span class="ms-3">{{user.name}}</span>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
                 <!--MAIN-->
