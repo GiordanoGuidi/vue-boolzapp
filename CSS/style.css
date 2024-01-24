@@ -19,6 +19,10 @@
     font-size: 0.8rem;
 }
 
+p{
+    margin-bottom: 0;
+}
+
 /* GENERICS */
 #root{
     height: 100vh;
@@ -28,16 +32,8 @@
 .main-container{
     width: 1400px;
     height: calc(100% - 50px);
-    /* background-color: coral; */
 }
 
-.col-4{
-    /* background-color: #143330; */
-}
-
-.col-8{
-    background-color: palevioletred;
-}
 .upper-sidebar{
     height: 200px;
     width: 100%;
@@ -55,26 +51,28 @@ img{
     border-radius: 50%;
 }
 
-/* MAIN */
-main{
-    background-color: cornflowerblue;
+#sidebar-header{
+    height: 70px;
 }
-.main-header{
+
+/* MAIN */
+#main-header{
     height: 70px;
     width: 100%;
-    background-color: crimson;
+    background-color: #EAEAEA;
 }
 
 .message-tools{
     height: 70px;
     width: 100%;
-    background-color: darkred;
+    background-color: #F3EEE9;
 }
 
 .message-area{
     height: calc(100% - 140px);
     width: 100%;
     overflow: auto;
+    background-image: url('/img/mine.jpg')
 }
 
 /* SIDEBAR */
