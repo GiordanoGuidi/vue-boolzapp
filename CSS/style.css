@@ -35,23 +35,26 @@
     width: 100%;
     background-color: darkmagenta;
     overflow: auto;
-}
+} 
 
+/* MAIN */
+main{
+    background-color: cornflowerblue;
+}
 .main-header{
     height: 70px;
     width: 100%;
     background-color: crimson;
 }
 
-#chat-area{
-    height: calc(100% - 140px);
-    width: 100%;
-    background-color: cornflowerblue;
-    overflow: auto;
-}
-
 .message-tools{
     height: 70px;
     width: 100%;
     background-color: darkred;
+}
+
+.message-area{
+    height: calc(100% - 140px);
+    width: 100%;
+    overflow: auto;
 }
