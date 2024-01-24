@@ -6,6 +6,19 @@
 }
 /* UTILS */
 
+.bg-lightblue{
+    background-color: #8EDAFB;
+
+}
+
+.c-lightblue{
+    color:#8EDAFB ;
+}
+
+.small-text{
+    font-size: 0.8rem;
+}
+
 /* GENERICS */
 #root{
     height: 100vh;
@@ -26,16 +39,21 @@
     background-color: palevioletred;
 }
 .upper-sidebar{
-    height: 250px;
+    height: 200px;
     width: 100%;
-    background-color: chartreuse;
+    background-color: white;
 }
 .bottom-sidebar{
-    height: calc(100% - 250px);
+    height: calc(100% - 200px);
     width: 100%;
     background-color: darkmagenta;
     overflow: auto;
 } 
+
+.user-img{
+    width: 50px;
+    border-radius: 50%;
+}
 
 /* MAIN */
 main{

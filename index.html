@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzap</title>
     <link rel="icon" href="https://img.freepik.com/premium-vector/whatsapp-icon-concept_23-2147897840.jpg">
+    <!--FONTAWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--VUE js-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!--JS-->
@@ -23,9 +25,42 @@
             
                 <!--LEFT CONTENT-->
                 <nav class="sidebar col-4 h-100">
-                    <!--UPPER SIDEBARE-->
-                    <div class="upper-sidebar">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem odio pariatur corrupti accusamus dolorum corporis nobis sed error fuga assumenda dolores voluptatibus impedit expedita ipsam veniam, laborum consequatur fugit doloremque.
+                    <!--UPPER SIDEBAR-->
+                    <div id="user-tools" class="upper-sidebar">
+                        <nav class="d-flex align-items-center justify-content-between mb-3">
+                            <div class="ms-2 mt-2">
+                                <img src="img/avatar_io.jpg" alt="" class="user-img">
+                                <span class="ms-1">Nome Utente</span>
+                            </div>
+                            <div>
+                                <!--LISTA ICONE-->
+                                <ul class="d-flex list-unstyled mb-0 gap-3 me-3">
+                                    <li><i class="fa-solid fa-arrows-rotate text-secondary"></i></li>
+                                    <li><i class="fa-solid fa-message text-secondary"></i></li>
+                                    <li><i class="fa-solid fa-ellipsis-vertical text-secondary"></i></li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <!--ATTIVA NOTIFICHE-->
+                        <nav class="bg-lightblue p-3 d-flex align-items-center">
+                            <div>
+                                <span><i class="fa-solid fa-bell-slash fa-l bg-white rounded-circle p-3 c-lightblue"></i></span>
+                            </div>
+                            <div class="ms-2 lh-sm">
+                                <span class="small-text">Ricevi notifiche di nuovi messaggi</span>
+                                <p class="mb-0 small-text text-secondary text-decoration-underline">Attiva notifiche desktop</p>
+                            </div>
+                        </nav>
+                        <!--CERCA CHAT-->
+                        <nav id="search-chat" class="">
+                            <nav class="navbar bg-light">
+                                <div class="container-fluid">
+                                  <form class="d-flex w-100" role="search">
+                                    <input class="form-control me-2" type="search" placeholder="Cerca o inizia una nuova chat">
+                                  </form>
+                                </div>
+                              </nav>
+                        </nav>
                     </div>
                     <!--BOTTOM SIDEBARE-->
                     <div class="bottom-sidebar">
@@ -51,7 +86,6 @@
                         Non quibusdam quod magnam voluptates facere dicta alias autem, doloribus tempora sunt beatae, recusandae, quae voluptatem quos ab? Sequi, ducimus possimus molestias nisi nulla culpa unde ipsum sint velit deleniti.</p>
                     </div>
                 </nav>
-
                 <!--MAIN-->
                 <main class="col-8 h-100">
                     <!--RIGHT CONTENT-->
