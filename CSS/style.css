@@ -17,3 +17,41 @@
     height: calc(100% - 50px);
     background-color: coral;
 }
+
+.col-4{
+    background-color: #143330;
+}
+
+.col-8{
+    background-color: palevioletred;
+}
+.upper-sidebar{
+    height: 250px;
+    width: 100%;
+    background-color: chartreuse;
+}
+.bottom-sidebar{
+    height: calc(100% - 250px);
+    width: 100%;
+    background-color: darkmagenta;
+    overflow: auto;
+}
+
+.main-header{
+    height: 70px;
+    width: 100%;
+    background-color: crimson;
+}
+
+#chat-area{
+    height: calc(100% - 140px);
+    width: 100%;
+    background-color: cornflowerblue;
+    overflow: auto;
+}
+
+.message-tools{
+    height: 70px;
+    width: 100%;
+    background-color: darkred;
+}
