@@ -1,0 +1,19 @@
+/* CSS RESET */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/* UTILS */
+
+/* GENERICS */
+#root{
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #009689 15%,#DBDBD3 15%, #DBDBD3 100%);
+}
+
+.main-container{
+    width: 1400px;
+    height: calc(100% - 50px);
+    background-color: coral;
+}

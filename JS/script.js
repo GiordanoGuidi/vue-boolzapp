@@ -1,12 +1,13 @@
-console.log('HELLO WORLD')
+
+const { user, contacts} = data;
 
 const {createApp} = Vue
 const app = createApp({
     data(){
         return{
-            user:user,
-            contacts:contacs
+          user,
+          contacts
         }
     }
 })
-console.log('Vue ok', Vue)
+app.mount('#root');
