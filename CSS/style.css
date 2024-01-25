@@ -5,7 +5,6 @@
     margin: 0;
 }
 /* UTILS */
-
 .bg-lightblue{
     background-color: #8EDAFB;
 
@@ -72,12 +71,35 @@ img{
     height: calc(100% - 140px);
     width: 100%;
     overflow: auto;
-    background-image: url('/img/mine.jpg')
+    background-image: url('../img/mine.jpg')
+}
+
+.message-container.send{
+    width: 200px;
+    padding-left: 15px;
+    background-color: white;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.message-container.received{
+    width: 200px;
+    background-color: #D5F9BA;
+    padding-left: 15px;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 50px;
+    margin-top: 20px;
+
 }
 
 /* SIDEBAR */
-
 .contacts-list li{
     border-bottom: 1px solid #EAEAEA;
+    cursor: pointer;
 
 }
