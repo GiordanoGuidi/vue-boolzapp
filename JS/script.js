@@ -12,33 +12,53 @@ const app = createApp({
         }
     },
     computed:{
+      //CONTATTO ATTIVO
       currentContact(){
         return this.contacts.find(contact=> contact.id === this.activeId)
       },
-
-      contactMessages(){
+      // MESSAGGI DEL CONTATTO ATTIVO
+      currentContactMessages(){
         console.log(this.currentContact.messages)
         return this.currentContact.messages
-      }
-
+      },
       
     },
     methods:{
       //RECUPERO ID DEL CONTATTO
       getActiveId(contact){
         this.activeId = contact.id;
-        // console.log('Clicked on contact:', contact);
-        // console.log('sonoactiveId', this.activeId);
       },
-
-
+      
+      // AGGIUNGO IL NUOVO MESSAGGIO NELLA LISTA MESSAGGI CONTATTO ATTIVO
       addNewMessage(){
         const message = {
           text:this.newMessage,
           status:'received',
         }
-        this.contactMessages.push(message)
+        this.currentContactMessages.push(message)
+        // console.log(this.currentContactMessages)
+        this.newMessage ='';
+      },
+
+      //GENERO MESSAGGIO AUTOMATICO DI RISPOSTA
+      autoReplyMessage(){
+        const replymessage={
+          text:'ok',
+          status:'sent',
+        }
+      this.currentContactMessages.push(replymessage)
+      },
+
+     //INSERISCO MESSAGGIO AUTOMATICO IN SET TIMEOUT
+      addTimeOut(){
+        setTimeout(this.autoReplyMessage,1000)
       }
+
+
+      
+
+      
+    
       
      
       

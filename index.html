@@ -33,7 +33,7 @@
                                 <span class="ms-1">Nome Utente</span>
                             </div>
                             <div>
-                                <!--LISTA ICONE-->
+                                <!--ICONS LIST-->
                                 <ul class="d-flex list-unstyled mb-0 gap-3 me-3">
                                     <li><i class="fa-solid fa-arrows-rotate text-secondary"></i></li>
                                     <li><i class="fa-solid fa-message text-secondary"></i></li>
@@ -41,7 +41,7 @@
                                 </ul>
                             </div>
                         </nav>
-                        <!--ATTIVA NOTIFICHE-->
+                        <!--NOTIFICATIONS-->
                         <nav class="bg-lightblue p-3 d-flex align-items-center">
                             <div>
                                 <span><i class="fa-solid fa-bell-slash fa-l bg-white rounded-circle p-3 c-lightblue"></i></span>
@@ -51,7 +51,7 @@
                                 <p class="small-text text-secondary text-decoration-underline">Attiva notifiche desktop</p>
                             </div>
                         </nav>
-                        <!--CERCA CHAT-->
+                        <!--SERACH CHAT-->
                         <nav id="search-chat" class="">
                             <nav class="navbar bg-light">
                                 <div class="container-fluid">
@@ -65,7 +65,7 @@
                     <!--CONTACTS LIST-->
                     <div class="bottom-sidebar">
                         <ul class="contacts-list list-unstyled mt-3">
-                            <li v-for="contact in contacts" class="mb-3" :key="contact.id" @click="getActiveId(contact),contactMessages" >
+                            <li v-for="contact in contacts" class="mb-3" :key="contact.id" @click="getActiveId(contact),currentContactMessages" >
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name" class="ms-3 mb-2 bg-secondary">
                                 <span class="ms-3">{{contact.name}}</span>
                             </li>
@@ -98,7 +98,7 @@
                         </header>
                         <!--MESSAGE-AREA-->
                         <div class="message-area d-flex flex-column">
-                            <div v-for="message in contactMessages" :class="{send: message.status ==='sent', received: message.status ==='received'}" class="message-container send">
+                            <div v-for="message in currentContactMessages" :class="{sent: message.status ==='sent', received: message.status ==='received'}" class="message-container send">
                                 <p class="">{{message.text}}</p>
                                 <p class="text-end me-4 small-text text-secondary"> {{message.date}}</p>
                             </div>                     
@@ -111,7 +111,7 @@
                             <nav id="search-chat" class="flex-grow-1">
                                 <nav class="navbar">
                                     <div class="container-fluid p-0">
-                                        <input class="form-control" type="search" placeholder="Scrivi un messaggio" v-model.trim="newMessage" @keyup.enter="addNewMessage()">
+                                        <input class="form-control" type="search" placeholder="Scrivi un messaggio" v-model.trim="newMessage" @keyup.enter="addNewMessage(),addTimeOut()">
                                     </div>
                                 </nav>
                             </nav>

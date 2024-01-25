@@ -74,7 +74,7 @@ img{
     background-image: url('../img/mine.jpg')
 }
 
-.message-container.send{
+.message-container.sent{
     width: 200px;
     padding-left: 15px;
     background-color: white;
