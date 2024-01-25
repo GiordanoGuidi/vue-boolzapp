@@ -65,7 +65,7 @@
                     <!--CONTACTS LIST-->
                     <div class="bottom-sidebar">
                         <ul class="contacts-list list-unstyled mt-3">
-                            <li v-for="contact in contacts" class="mb-3" :key="contact.id" @click="getActiveId(contact)" >
+                            <li v-for="contact in contacts" class="mb-3" :key="contact.id" @click="getActiveId(contact),currentContact" >
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name" class="ms-3 mb-2 bg-secondary">
                                 <span class="ms-3">{{contact.name}}</span>
                             </li>
@@ -81,10 +81,10 @@
                         <header id="main-header" class="d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center ms-2">
                                 <div>
-                                    <img :src="`img/avatar_1.jpg`" alt="">
+                                    <img :src="`img/avatar${currentContact.avatar}.jpg`" alt="">
                                 </div>
                                 <div class="lh-sm ms-3">
-                                    <p>Michele</p>
+                                    <p>{{currentContact.name}}</p>
                                     <p class="text-secondary">Ultimo accesso oggi alle</p>
                                 </div>
                             </div>

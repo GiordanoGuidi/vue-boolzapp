@@ -12,12 +12,7 @@ const app = createApp({
     },
     computed:{
       currentContact(){
-        this.contacts.find(contact=>{
-          if(contact.id === this.activeId){
-            return true
-          }
-        })
-
+        return this.contacts.find(contact=> contact.id === this.activeId)
       }
 
       
@@ -26,6 +21,7 @@ const app = createApp({
       //RECUPERO ID DEL CONTATTO
       getActiveId(contact){
         this.activeId = contact.id;
+        console.log('Clicked on contact:', contact);
         console.log('sonoactiveId', this.activeId);
       },
       
