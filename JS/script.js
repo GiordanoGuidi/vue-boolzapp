@@ -8,11 +8,17 @@ const app = createApp({
           user,
           contacts,
           activeId:1,
+          newMessage:'',
         }
     },
     computed:{
       currentContact(){
         return this.contacts.find(contact=> contact.id === this.activeId)
+      },
+
+      contactMessages(){
+        console.log(this.currentContact.messages)
+        return this.currentContact.messages
       }
 
       
@@ -21,12 +27,20 @@ const app = createApp({
       //RECUPERO ID DEL CONTATTO
       getActiveId(contact){
         this.activeId = contact.id;
-        console.log('Clicked on contact:', contact);
-        console.log('sonoactiveId', this.activeId);
+        // console.log('Clicked on contact:', contact);
+        // console.log('sonoactiveId', this.activeId);
       },
+
+
+      addNewMessage(){
+        const message = {
+          text:this.newMessage,
+          status:'received',
+        }
+        this.contactMessages.push(message)
+      }
       
      
-      
       
   
     } 

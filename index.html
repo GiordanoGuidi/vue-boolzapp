@@ -65,7 +65,7 @@
                     <!--CONTACTS LIST-->
                     <div class="bottom-sidebar">
                         <ul class="contacts-list list-unstyled mt-3">
-                            <li v-for="contact in contacts" class="mb-3" :key="contact.id" @click="getActiveId(contact),currentContact" >
+                            <li v-for="contact in contacts" class="mb-3" :key="contact.id" @click="getActiveId(contact),contactMessages" >
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name" class="ms-3 mb-2 bg-secondary">
                                 <span class="ms-3">{{contact.name}}</span>
                             </li>
@@ -98,18 +98,10 @@
                         </header>
                         <!--MESSAGE-AREA-->
                         <div class="message-area d-flex flex-column">
-                            <div class="message-container send">
-                                <p class="">Ciao fonzi</p>
-                                <p class="text-end me-4"> ecooci</p>
-                            </div>
-
-                            <div class="message-container received align-self-end">
-                                <p class="">Ciao fonzi</p>
-                                <p class="text-end me-4"> ecooci</p>
-                            </div>
-
-
-                            
+                            <div v-for="message in contactMessages" :class="{send: message.status ==='sent', received: message.status ==='received'}" class="message-container send">
+                                <p class="">{{message.text}}</p>
+                                <p class="text-end me-4 small-text text-secondary"> {{message.date}}</p>
+                            </div>                     
                         </div>
                         <!--MESSAGE TOOLS-->
                         <div class="message-tools d-flex align-items-center">
@@ -119,11 +111,9 @@
                             <nav id="search-chat" class="flex-grow-1">
                                 <nav class="navbar">
                                     <div class="container-fluid p-0">
-                                        <form class="d-flex w-100" role="search">
-                                        <input class="form-control" type="search" placeholder="Scrivi un messaggio">
-                                        </form>
+                                        <input class="form-control" type="search" placeholder="Scrivi un messaggio" v-model.trim="newMessage" @keyup.enter="addNewMessage()">
                                     </div>
-                                    </nav>
+                                </nav>
                             </nav>
                             <div>
                                 <span ><i class="fa-solid fa-microphone fa-xl mx-4 text-secondary"></i></span>
