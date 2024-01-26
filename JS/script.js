@@ -13,13 +13,14 @@ const app = createApp({
         }
     },
     computed:{
+      
+    //#COMPUTED---------------------------------
       //CONTATTO ATTIVO
       currentContact(){
         return this.contacts.find(contact=> contact.id === this.activeId)
       },
       // MESSAGGI DEL CONTATTO ATTIVO
       currentContactMessages(){
-        console.log(this.currentContact.messages)
         return this.currentContact.messages
       },
       
@@ -30,26 +31,31 @@ const app = createApp({
           contact.name.toLowerCase().includes(searchTerm)
           );
             return filteredArray;
-      }
+      },
+
+      
     },
     methods:{
-      
+
+      //#METHODS----------------------
       //RECUPERO ID DEL CONTATTO
       getActiveId(contact){
         this.activeId = contact.id;
       },
       
+      
       // CREO FUNZIONE CHE GENERA IL MESSAGGIO 
       addNewMessage(text,status){
         const message = {
+          id:new Date().getTime(),
+          date: new Date().toLocaleTimeString(),
           text,
           status
         }
         this.currentContactMessages.push(message)
-        console.log('sono current chat', this.currentContactMessages)
         this.newMessage ='';
       },
-
+      
       /* CREO FUNZIONE CHE INVOCA LA FUNZIONE CHE GENERA IL MESSAGGIO
       E AGGIUNGO SET TIMEOUT PER LA RISPOSTA*/
       sendMessage(){
@@ -58,12 +64,16 @@ const app = createApp({
         setTimeout(()=>{
           this.addNewMessage('ok','sent');
         },1000)},
-    
-    
-    
-    },
       
 
+
+      }
+
+
+      
+    
+      
+      
      
 
     
