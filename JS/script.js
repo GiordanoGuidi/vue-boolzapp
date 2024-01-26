@@ -31,46 +31,41 @@ const app = createApp({
           );
             return filteredArray;
       }
-
-
     },
     methods:{
+      
       //RECUPERO ID DEL CONTATTO
       getActiveId(contact){
         this.activeId = contact.id;
       },
       
-      // AGGIUNGO IL NUOVO MESSAGGIO NELLA LISTA MESSAGGI CONTATTO ATTIVO
-      addNewMessage(){
-        if(!this.newMessage)return;
+      // CREO FUNZIONE CHE GENERA IL MESSAGGIO 
+      addNewMessage(text,status){
         const message = {
-          text:this.newMessage,
-          status:'received',
+          text,
+          status
         }
         this.currentContactMessages.push(message)
         console.log('sono current chat', this.currentContactMessages)
         this.newMessage ='';
       },
 
-      //GENERO MESSAGGIO AUTOMATICO DI RISPOSTA
-      autoReplyMessage(){
-        const replymessage={
-          text:'ok',
-          status:'sent',
-        }
-      this.currentContactMessages.push(replymessage)
-      },
-
-     //INSERISCO MESSAGGIO AUTOMATICO IN SET
-      addTimeOut(){
-        setTimeout(this.autoReplyMessage,1000)
-      },
-
+      /* CREO FUNZIONE CHE INVOCA LA FUNZIONE CHE GENERA IL MESSAGGIO
+      E AGGIUNGO SET TIMEOUT PER LA RISPOSTA*/
+      sendMessage(){
+        if(!this.newMessage)return;
+        this.addNewMessage(this.newMessage,'received')
+        setTimeout(()=>{
+          this.addNewMessage('ok','sent');
+        },1000)},
+    
+    
+    
+    },
       
 
+     
 
-
-    },
-
-  });
+    
+ });
   app.mount('#root');

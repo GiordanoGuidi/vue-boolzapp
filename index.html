@@ -109,7 +109,7 @@
                         <nav id="search-chat" class="flex-grow-1">
                             <nav class="navbar">
                                 <div class="container-fluid p-0">
-                                    <input class="form-control" type="search" placeholder="Scrivi un messaggio" v-model.trim="newMessage" @keyup.enter="addNewMessage(),addTimeOut()">
+                                    <input class="form-control" type="search" placeholder="Scrivi un messaggio" v-model.trim="newMessage" @keyup.enter="sendMessage()">
                                 </div>
                             </nav>
                         </nav>
