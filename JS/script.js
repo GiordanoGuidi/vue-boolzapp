@@ -29,8 +29,7 @@ const app = createApp({
           const filteredArray = this.contacts.filter(contact=>
           contact.name.toLowerCase().includes(searchTerm)
           );
-          console.log(filteredArray);
-          return null
+            return filteredArray;
       }
 
 

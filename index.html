@@ -65,7 +65,7 @@
                     <!--CONTACTS LIST-->
                     <div class="bottom-sidebar">
                         <ul class="contacts-list list-unstyled mt-3">
-                            <li v-for="contact in contacts" class="mb-3" :key="contact.id" @click="getActiveId(contact),currentContactMessages" >
+                            <li v-for="contact in filteredContacts" class="mb-3" :key="contact.id" @click="getActiveId(contact),currentContactMessages" >
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name" class="ms-3 mb-2 bg-secondary">
                                 <span class="ms-3">{{contact.name}}</span>
                             </li>
