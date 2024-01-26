@@ -20,13 +20,13 @@
 <body>
     <div id="root" class="d-flex justify-content-center align-items-center">
         <!--MAIN CONTAINER-->
-        <div class="main-container d-flex">
+        <main class="main-container d-flex">
             <div class="row w-100 h-100">
-            
                 <!--LEFT CONTENT-->
                 <nav class="sidebar col-4 h-100 p-0">
                     <!--UPPER SIDEBAR-->
                     <div id="user-tools" class="upper-sidebar">
+                        <!--HEEADER SIDEBAR-->
                         <nav id="sidebar-header" class="d-flex align-items-center justify-content-between">
                             <div class="ms-2 mt-2">
                                 <img src="img/avatar_io.jpg" alt="" class="user-img">
@@ -35,9 +35,9 @@
                             <div>
                                 <!--ICONS LIST-->
                                 <ul class="d-flex list-unstyled mb-0 gap-3 me-3">
-                                    <li><i class="fa-solid fa-arrows-rotate text-secondary"></i></li>
-                                    <li><i class="fa-solid fa-message text-secondary"></i></li>
-                                    <li><i class="fa-solid fa-ellipsis-vertical text-secondary"></i></li>
+                                    <li><i class="fa-solid fa-arrows-rotate text-secondary" role="button"></i></li>
+                                    <li><i class="fa-solid fa-message text-secondary" role="button"></i></li>
+                                    <li><i class="fa-solid fa-ellipsis-vertical text-secondary" role="button"></i></li>
                                 </ul>
                             </div>
                         </nav>
@@ -56,7 +56,7 @@
                             <nav class="navbar bg-light">
                                 <div class="container-fluid">
                                   <form class="d-flex w-100" role="search">
-                                    <input class="form-control me-2" type="search" placeholder="Cerca o inizia una nuova chat">
+                                    <input class="form-control me-2" type="search" placeholder="Cerca o inizia una nuova chat" v-model.trim="reserchText">
                                   </form>
                                 </div>
                               </nav>
@@ -73,56 +73,53 @@
                     </div>
                 </nav>
 
-                <!--MAIN-->
-                <main class="col-8 h-100 p-0">
-                    <!--RIGHT CONTENT-->
-                    <section id="chat" class="h-100">
-                        <!--MAIN-HEADER-->
-                        <header id="main-header" class="d-flex align-items-center justify-content-between">
-                            <div class="d-flex align-items-center ms-2">
-                                <div>
-                                    <img :src="`img/avatar${currentContact.avatar}.jpg`" alt="">
-                                </div>
-                                <div class="lh-sm ms-3">
-                                    <p>{{currentContact.name}}</p>
-                                    <p class="text-secondary">Ultimo accesso oggi alle</p>
-                                </div>
-                            </div>
-                            <nav>
-                                <ul class="d-flex align-items-center list-unstyled me-3 gap-3 mb-0">
-                                    <li><i class="fa-solid fa-magnifying-glass text-secondary"></i></li>
-                                    <li><i class="fa-solid fa-paperclip text-secondary"></i></li>
-                                    <li><i class="fa-solid fa-ellipsis-vertical text-secondary"></i></li>
-                                </ul>
-                            </nav>
-                        </header>
-                        <!--MESSAGE-AREA-->
-                        <div class="message-area d-flex flex-column">
-                            <div v-for="message in currentContactMessages" :class="{sent: message.status ==='sent', received: message.status ==='received'}" class="message-container send">
-                                <p class="">{{message.text}}</p>
-                                <p class="text-end me-4 small-text text-secondary"> {{message.date}}</p>
-                            </div>                     
-                        </div>
-                        <!--MESSAGE TOOLS-->
-                        <div class="message-tools d-flex align-items-center">
+                <!--RIGHT CONTENT-->
+                <section id="chat" class="h-100 col-8 h-100 p-0">
+                    <!--CHAT -HEADER-->
+                    <header id="main-header" class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center ms-2">
                             <div>
-                                <span ><i class="fa-regular fa-face-smile fa-xl mx-4 text-secondary"></i></span>
+                                <img :src="`img/avatar${currentContact.avatar}.jpg`" alt="">
                             </div>
-                            <nav id="search-chat" class="flex-grow-1">
-                                <nav class="navbar">
-                                    <div class="container-fluid p-0">
-                                        <input class="form-control" type="search" placeholder="Scrivi un messaggio" v-model.trim="newMessage" @keyup.enter="addNewMessage(),addTimeOut()">
-                                    </div>
-                                </nav>
-                            </nav>
-                            <div>
-                                <span ><i class="fa-solid fa-microphone fa-xl mx-4 text-secondary"></i></span>
+                            <div class="lh-sm ms-3">
+                                <p>{{currentContact.name}}</p>
+                                <p class="text-secondary">Ultimo accesso oggi alle</p>
                             </div>
                         </div>
-                    </section>
-                </main>
+                        <nav>
+                            <ul class="d-flex align-items-center list-unstyled me-3 gap-3 mb-0">
+                                <li><i class="fa-solid fa-magnifying-glass text-secondary" role="button"></i></li>
+                                <li><i class="fa-solid fa-paperclip text-secondary" role="button"></i></li>
+                                <li><i class="fa-solid fa-ellipsis-vertical text-secondary" role="button"></i></li>
+                            </ul>
+                        </nav>
+                    </header>
+                    <!--MESSAGE-AREA-->
+                    <div class="message-area d-flex flex-column">
+                        <div v-for="message in currentContactMessages" :class="{sent: message.status ==='sent', received: message.status ==='received'}" class="message-container send">
+                            <p class="">{{message.text}}</p>
+                            <p class="text-end me-4 small-text text-secondary"> {{message.date}}</p>
+                        </div>                     
+                    </div>
+                    <!--MESSAGE TOOLS-->
+                    <div class="message-tools d-flex align-items-center">
+                        <div>
+                            <span ><i class="fa-regular fa-face-smile fa-xl mx-4 text-secondary" role="button"></i></span>
+                        </div>
+                        <nav id="search-chat" class="flex-grow-1">
+                            <nav class="navbar">
+                                <div class="container-fluid p-0">
+                                    <input class="form-control" type="search" placeholder="Scrivi un messaggio" v-model.trim="newMessage" @keyup.enter="addNewMessage(),addTimeOut()">
+                                </div>
+                            </nav>
+                        </nav>
+                        <div>
+                            <span ><i class="fa-solid fa-microphone fa-xl mx-4 text-secondary" role="button"></i></span>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </div>
+        </main>
     </div>
 </body>
 </html>

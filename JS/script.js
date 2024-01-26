@@ -7,8 +7,9 @@ const app = createApp({
         return{
           user,
           contacts,
-          activeId:1,
+          activeId: 1,
           newMessage:'',
+          reserchText:'',
         }
     },
     computed:{
@@ -22,6 +23,17 @@ const app = createApp({
         return this.currentContact.messages
       },
       
+      //ARRAY FILTRATO IN BASE AL RESERCHTEXT
+      filteredContacts(){
+        const searchTerm = this.reserchText.toLowerCase();
+          const filteredArray = this.contacts.filter(contact=>
+          contact.name.toLowerCase().includes(searchTerm)
+          );
+          console.log(filteredArray);
+          return null
+      }
+
+
     },
     methods:{
       //RECUPERO ID DEL CONTATTO
@@ -31,12 +43,13 @@ const app = createApp({
       
       // AGGIUNGO IL NUOVO MESSAGGIO NELLA LISTA MESSAGGI CONTATTO ATTIVO
       addNewMessage(){
+        if(!this.newMessage)return;
         const message = {
           text:this.newMessage,
           status:'received',
         }
         this.currentContactMessages.push(message)
-        // console.log(this.currentContactMessages)
+        console.log('sono current chat', this.currentContactMessages)
         this.newMessage ='';
       },
 
@@ -49,20 +62,16 @@ const app = createApp({
       this.currentContactMessages.push(replymessage)
       },
 
-     //INSERISCO MESSAGGIO AUTOMATICO IN SET TIMEOUT
+     //INSERISCO MESSAGGIO AUTOMATICO IN SET
       addTimeOut(){
         setTimeout(this.autoReplyMessage,1000)
-      }
-
-
-      
+      },
 
       
-    
-      
-     
-      
-  
-    } 
+
+
+
+    },
+
   });
   app.mount('#root');
