@@ -17,14 +17,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <!--STYLE-->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <div id="root" class="d-flex justify-content-center align-items-center">
         <!--MAIN CONTAINER-->
-        <main class="main-container container-fluid d-flex">
+        <main class="main-container d-flex">
             <div class="row w-100 h-100">
                 <!--LEFT CONTENT-->
-                <nav class="sidebar col-4 h-100 p-0">
+                <nav class="sidebar col-xl-4 col-md-2 sm-d-none h-100 p-0">
                     <!--UPPER SIDEBAR-->
                     <div id="user-tools" class="upper-sidebar">
                         <!--HEEADER SIDEBAR-->
@@ -72,6 +73,7 @@
                                     <div>
                                         <span class="ms-3">{{contact.name}}</span>
                                         <p class="ms-3">{{getLastMessage(contact).text}}</p>
+                                        <!-- <p class="ms-3">sta scrivendo...</p> -->
                                     </div>
                                     <div class="text-end position-absolute end-0 me-2">
                                         <div class="small-text">{{getLastMessage(contact).date}}</div>
@@ -83,7 +85,7 @@
                 </nav>
 
                 <!--RIGHT CONTENT-->
-                <section id="chat" class="h-100 col-8 h-100 p-0">
+                <section id="chat" class="h-100 col-xl-8 col-md-10 h-100 p-0">
                     <!--CHAT-HEADER-->
                     <header id="main-header" class="d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center ms-2">
@@ -93,11 +95,18 @@
                             <div class="lh-sm ms-3">
                                 <p>{{currentContact.name}}</p>
                                 <p class="text-secondary">Ultimo accesso oggi alle</p>
+                                <!-- <p v-show="isWriting">sta scrivendo...</p> -->
                             </div>
+                            
                         </div>
                         <nav>
                             <ul class="d-flex align-items-center list-unstyled me-3 gap-3 mb-0">
-                                <li><i class="fa-solid fa-magnifying-glass text-secondary" role="button"></i></li>
+                                <li class="d-flex align-items-center" @click="changeHasSearchMessage()">
+                                    <i class="fa-solid fa-magnifying-glass text-secondary" role="button" v-show="!hasSearchMessage"></i>
+                                    <div class="container-fluid">
+                                        <input class="form-control me-2" type="search" placeholder="Search messages" aria-label="Search" v-show="hasSearchMessage" v-model.trim="reserchMessageText">
+                                    </div>
+                                </li>
                                 <li><i class="fa-solid fa-paperclip text-secondary" role="button"></i></li>
                                 <li><i class="fa-solid fa-ellipsis-vertical text-secondary" role="button"></i></li>
                             </ul>

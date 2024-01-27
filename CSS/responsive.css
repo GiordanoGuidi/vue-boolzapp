@@ -1,0 +1,13 @@
+/*QUANDO IL DISPLAY E' INFERIORE A 768 PX*/
+@media screen and (min-width: 0px){
+    nav.sidebar{
+        display: none;
+    }
+}
+
+/*QUANDO IL DISPLAY E' SUPERIORE A 768 PX*/
+@media screen and (min-width: 768px){
+    nav.sidebar{
+        display: block;
+    }
+}
