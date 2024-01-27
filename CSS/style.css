@@ -7,7 +7,6 @@
 /* UTILS */
 .bg-lightblue{
     background-color: #8EDAFB;
-
 }
 
 .c-lightblue{
@@ -71,8 +70,8 @@ img{
 
 .message-container.sent{
     width: 200px;
-    padding-left: 15px;
     background-color: white;
+    padding-left: 15px;
     border-radius: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -90,14 +89,12 @@ img{
     margin-right: 50px;
     margin-top: 20px;
     align-self: flex-end;
-
 }
 
 /* SIDEBAR */
 .contacts-list li{
     border-bottom: 1px solid #EAEAEA;
     cursor: pointer;
-
 }
 
 .contacts-list li:hover{

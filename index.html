@@ -21,7 +21,7 @@
 <body>
     <div id="root" class="d-flex justify-content-center align-items-center">
         <!--MAIN CONTAINER-->
-        <main class="main-container d-flex">
+        <main class="main-container container-fluid d-flex">
             <div class="row w-100 h-100">
                 <!--LEFT CONTENT-->
                 <nav class="sidebar col-4 h-100 p-0">
@@ -66,9 +66,17 @@
                     <!--CONTACTS LIST-->
                     <div class="bottom-sidebar">
                         <ul class="contacts-list list-unstyled mt-3">
-                            <li v-for="contact in filteredContacts" class="mb-3" :key="contact.id" @click="getActiveId(contact),currentContactMessages" >
+                            <li v-for="contact in filteredContacts" class="mb-3 d-flex position-relative" :key="contact.id" @click="getActiveId(contact),currentContactMessages" >
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name" class="ms-3 mb-2 bg-secondary">
-                                <span class="ms-3">{{contact.name}}</span>
+                                <div class="d-flex">
+                                    <div>
+                                        <span class="ms-3">{{contact.name}}</span>
+                                        <p class="ms-3">{{lastMessage(contact)}}</p>
+                                    </div>
+                                    <div class="text-end position-absolute end-0 me-2">
+                                        <div>ciao</div>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -97,14 +105,16 @@
                     </header>
                     <!--MESSAGE-AREA-->
                     <div class="message-area d-flex flex-column">
-                        <div v-for="message in currentContactMessages" :class="{sent: message.status ==='sent', received: message.status ==='received'}" class="message-container send">
+                        <!--MESSAGE-->
+                        <div v-for="message in currentContactMessages"  :class="{sent: message.status ==='sent', received: message.status ==='received'}" class="message-container send">
                             <div class="d-flex align-items-center justify-content-between">
                                 <p>{{message.text}}</p>
+                                <!--DROP DOWN-->
                                 <div class="dropdown">
                                     <i class="fa-solid fa-caret-down mx-3 " data-bs-toggle="dropdown"></i>
                                     <ul class="dropdown-menu">
                                       <li><a class="dropdown-item" href="#">Message info</a></li>
-                                      <li><a class="dropdown-item" href="#">Delete message</a></li>
+                                      <li @click="deleteMessage(message.id)"><a class="dropdown-item" href="#">Delete message </a></li>
                                     </ul>
                                   </div>
                             </div>
