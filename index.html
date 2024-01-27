@@ -71,10 +71,10 @@
                                 <div class="d-flex">
                                     <div>
                                         <span class="ms-3">{{contact.name}}</span>
-                                        <p class="ms-3">{{lastMessage(contact)}}</p>
+                                        <p class="ms-3">{{getLastMessage(contact).text}}</p>
                                     </div>
                                     <div class="text-end position-absolute end-0 me-2">
-                                        <div>ciao</div>
+                                        <div class="small-text">{{getLastMessage(contact).date}}</div>
                                     </div>
                                 </div>
                             </li>

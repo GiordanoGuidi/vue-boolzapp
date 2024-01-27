@@ -69,27 +69,27 @@ const app = createApp({
           
           
           
-          // deleteMessage(id){
-            
+        // deleteMessage(id){
+          
           //   this.currentContactMessages = this.currentContactMessages.filter(message =>{
-          //     if(id !== message.id){
-          //       return true
-          //     }else{
-          //       return false
-          //     }
-          //   })
-            
-          //   console.log('id', id,'lista messaggi-----',
-          //   this.currentContactMessages,'messaggi validi----',
-          //   this.currentContactMessages,'eo', this.currentContact)
-          // },
-          
+            //     if(id !== message.id){
+              //       return true
+              //     }else{
+                //       return false
+                //     }
+                //   })
+                
+                //   console.log('id', id,'lista messaggi-----',
+                //   this.currentContactMessages,'messaggi validi----',
+                //   this.currentContactMessages,'eo', this.currentContact)
+                // },
+                  
           // RECUPERO IL TESTO DELL'ULTIMO MESSAGGIO DEL CONTATTO
-          lastMessage(contact){
+          getLastMessage(contact){
           const lastMessage = contact.messages[contact.messages.length - 1]
-          return lastMessage.text
+          return lastMessage
           }
-          
+                  
           
         } ,
         
