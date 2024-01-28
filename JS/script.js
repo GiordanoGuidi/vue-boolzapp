@@ -10,8 +10,6 @@ const app = createApp({
           activeId: 1,
           newMessage:'',
           reserchText:'',
-
-
           hasSearchMessage:false,
           reserchMessageText:'',
           hasFullContent:false
@@ -68,9 +66,12 @@ const app = createApp({
           this.addNewMessage('ok','sent');
         },1000)},
         
-
-          
-
+      // FILTRO ARRAY DAI MESSAGGI SENZA IL MESSAGGIO DA ELIMINARE
+        validMessage(messageId){
+          this.currentContact.messages = this.currentContact.messages.filter(message =>
+          message.id !== messageId);
+          console.log('Messaggio eliminato:', messageId);
+        },
 
         // RECUPERO IL TESTO DELL'ULTIMO MESSAGGIO DEL CONTATTO
         getLastMessage(contact){
