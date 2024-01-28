@@ -10,6 +10,8 @@ const app = createApp({
           activeId: 1,
           newMessage:'',
           reserchText:'',
+
+
           hasSearchMessage:false,
           reserchMessageText:'',
           hasFullContent:false
@@ -28,15 +30,13 @@ const app = createApp({
     },
     
     //ARRAY FILTRATO IN BASE AL RESERCHTEXT
-    filteredContacts(){
+    reserchedContacts(){
       const searchTerm = this.reserchText.toLowerCase();
       const filteredArray = this.contacts.filter(contact=>
         contact.name.toLowerCase().includes(searchTerm)
         );
         return filteredArray;
       },
-      
-    
     },
     methods:{
       
@@ -68,23 +68,8 @@ const app = createApp({
           this.addNewMessage('ok','sent');
         },1000)},
         
-      //! FILTRO ARRAY DAI MESSAGGI SENZA IL MESSAGGIO DA ELIMINARE
-      //!(PROBLEMA E' CHE LE COMPUTED NON POSSONO ESSERE MODIFICATE)
-        // deleteMessage(id){
-        //   this.currentContactMessages = this.currentContactMessages.filter(message =>{
-        //     if(id !== message.id){
-        //       console.log('ciao')
-        //       return true
-        //     }else{
-        //       return false
-        //     }
-        //   })
-        //   return this.currentContactMessages 
+
           
-        //   console.log('id', id,'lista messaggi-----',
-        //   this.currentContactMessages,'messaggi validi----',
-        //   validMessages,)
-        // },
 
 
         // RECUPERO IL TESTO DELL'ULTIMO MESSAGGIO DEL CONTATTO

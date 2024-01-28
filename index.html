@@ -59,7 +59,7 @@
                             <nav class="navbar bg-light">
                                 <div class="container-fluid">
                                   <form class="d-flex w-100" role="search">
-                                    <input class="form-control me-2" type="search" placeholder="Cerca o inizia una nuova chat" v-model.trim="reserchText">
+                                    <input class="form-control mx-2" type="search" placeholder="Cerca o inizia una nuova chat" v-model.trim="reserchText">
                                   </form>
                                 </div>
                               </nav>
@@ -68,16 +68,16 @@
                     <!--CONTACTS LIST-->
                     <div class="bottom-sidebar">
                         <ul class="contacts-list list-unstyled mt-3">
-                            <li v-for="contact in filteredContacts" class="mb-3 d-flex position-relative" :key="contact.id" @click="getActiveId(contact),currentContactMessages" >
+                            <li v-for="contact in reserchedContacts" class="mb-3 d-flex position-relative" :key="contact.id" @click="getActiveId(contact),currentContactMessages" >
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name" class="ms-3 mb-2 bg-secondary">
                                 <div class="d-flex">
                                     <div>
                                         <span class="ms-3">{{contact.name}}</span>
-                                        <p class="ms-3">{{getLastMessage(contact).text}}</p>
+                                        <p id="last-message" class="ms-3">{{getLastMessage(contact).text}}</p>
                                         <!-- <p class="ms-3">sta scrivendo...</p> -->
                                     </div>
                                     <div class="text-end position-absolute end-0 me-2">
-                                        <div class="small-text">{{getLastMessage(contact).date}}</div>
+                                        <div id="date-message" class="small-text">{{getLastMessage(contact).date}}</div>
                                     </div>
                                 </div>
                             </li>

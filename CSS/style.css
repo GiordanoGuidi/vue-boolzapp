@@ -104,6 +104,11 @@ img{
     align-self: flex-end;
 }
 
+#last-message,
+#date-message{
+    display: none;
+}
+
 /* SIDEBAR */
 .contacts-list li{
     border-bottom: 1px solid #EAEAEA;

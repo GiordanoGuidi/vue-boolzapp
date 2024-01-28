@@ -25,6 +25,8 @@
     nav ul .address-book{
         display: none;
     }
+
+    
 }
 
 /*QUANDO IL DISPLAY E' 992PX O INFERIORE*/
@@ -35,5 +37,13 @@
 
     #chat{
         width: calc(100% - 450px);
+    }
+
+    #date-message{
+        display: block;
+    }
+
+    #last-message{
+        display: block;
     }
 }
