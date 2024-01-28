@@ -11,7 +11,8 @@ const app = createApp({
           newMessage:'',
           reserchText:'',
           hasSearchMessage:false,
-          reserchMessageText:''
+          reserchMessageText:'',
+          hasFullContent:false
         }
     },
     computed:{
@@ -95,14 +96,16 @@ const app = createApp({
         //CREO FUNZIONE CHE CAMBIA IL VALORE DI HAS SEARCH MESSAGE
         changeHasSearchMessage(){
           this.hasSearchMessage = true;
-        }
+        },
 
         //!CREO ARRAY CHE FILTRA IL TESTO DEL MESSAGGIO CERCATO
         //!(STESSA DIFFICOLTA' DELLA RIMOZIONE MESSAGGIO)
 
         
-
-       
+        //TOGGLE HASFULLCONTENT
+       toggleHasFullContent(){
+        this.hasFullContent = !this.hasFullContent
+       }
         
 
         

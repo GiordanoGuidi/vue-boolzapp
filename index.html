@@ -25,7 +25,7 @@
         <main class="main-container d-flex">
             <div class="row w-100 h-100">
                 <!--LEFT CONTENT-->
-                <nav class="sidebar col-xl-4 col-md-2 sm-d-none h-100 p-0">
+                <nav class="sidebar col-xl-4 col-md-2 h-100 p-0" :class="{'d-block':hasFullContent}" >
                     <!--UPPER SIDEBAR-->
                     <div id="user-tools" class="upper-sidebar">
                         <!--HEEADER SIDEBAR-->
@@ -37,6 +37,7 @@
                             <div>
                                 <!--ICONS LIST-->
                                 <ul class="d-flex list-unstyled mb-0 gap-3 me-3">
+                                    <li class="address-book" @click="toggleHasFullContent()"><i class="fa-solid fa-address-book text-secondary" role="button"></i></li>
                                     <li><i class="fa-solid fa-arrows-rotate text-secondary" role="button"></i></li>
                                     <li><i class="fa-solid fa-message text-secondary" role="button"></i></li>
                                     <li><i class="fa-solid fa-ellipsis-vertical text-secondary" role="button"></i></li>
@@ -85,7 +86,7 @@
                 </nav>
 
                 <!--RIGHT CONTENT-->
-                <section id="chat" class="h-100 col-xl-8 col-md-10 h-100 p-0">
+                <section id="chat" class="h-100 col-xl-8 col-md-10 h-100 p-0" :class="{'display-none':hasFullContent}">
                     <!--CHAT-HEADER-->
                     <header id="main-header" class="d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center ms-2">
@@ -101,11 +102,10 @@
                         </div>
                         <nav>
                             <ul class="d-flex align-items-center list-unstyled me-3 gap-3 mb-0">
+                                <li class="address-book" @click="toggleHasFullContent()"><i class="fa-solid fa-address-book text-secondary" role="button"></i></li>
                                 <li class="d-flex align-items-center" @click="changeHasSearchMessage()">
                                     <i class="fa-solid fa-magnifying-glass text-secondary" role="button" v-show="!hasSearchMessage"></i>
-                                    <div class="container-fluid">
-                                        <input class="form-control me-2" type="search" placeholder="Search messages" aria-label="Search" v-show="hasSearchMessage" v-model.trim="reserchMessageText">
-                                    </div>
+                                    <input class="form-control me-2" type="search" placeholder="Search messages" aria-label="Search" v-show="hasSearchMessage" v-model.trim="reserchMessageText">
                                 </li>
                                 <li><i class="fa-solid fa-paperclip text-secondary" role="button"></i></li>
                                 <li><i class="fa-solid fa-ellipsis-vertical text-secondary" role="button"></i></li>

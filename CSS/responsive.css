@@ -1,13 +1,39 @@
-/*QUANDO IL DISPLAY E' INFERIORE A 768 PX*/
+/*QUANDO IL DISPLAY E' 768 PX O INFERIORE*/
 @media screen and (min-width: 0px){
+    #chat{
+        width: 100%;
+    }
+
     nav.sidebar{
+        width: 100%;
+    }
+
+}
+
+/*QUANDO IL DISPLAY E' 992PX O INFERIORE*/
+@media screen and (min-width: 768px){
+    nav.sidebar{
+        display: block;
+        width: 250px;
+    }
+
+    #chat{
+        width: calc(100% - 250px);
+        display: block;
+    }
+
+    nav ul .address-book{
         display: none;
     }
 }
 
-/*QUANDO IL DISPLAY E' SUPERIORE A 768 PX*/
-@media screen and (min-width: 768px){
+/*QUANDO IL DISPLAY E' 992PX O INFERIORE*/
+@media screen and (min-width: 992px){
     nav.sidebar{
-        display: block;
+        width: 450px;
+    }
+
+    #chat{
+        width: calc(100% - 450px);
     }
 }

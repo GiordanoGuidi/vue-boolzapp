@@ -21,6 +21,10 @@ p{
     margin-bottom: 0;
 }
 
+.display-none{
+    display: none;
+}
+
 /* GENERICS */
 #root{
     height: 100vh;
@@ -30,6 +34,15 @@ p{
 .main-container{
     width: 1400px;
     height: calc(100% - 50px);
+}
+
+nav.sidebar{
+    width: 450px;
+    display: none;
+}
+
+#chat{
+    width: calc(100% - 450px);
 }
 
 .upper-sidebar{
@@ -101,3 +114,13 @@ img{
     filter: brightness(80%);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
 }
+
+/* CLASSI DINAMICHE------------------ */
+nav.sidebar.full{
+    width: 100%;
+}
+
+
+
+
+
