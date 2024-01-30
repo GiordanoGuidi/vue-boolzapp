@@ -107,7 +107,7 @@
                                     <i class="fa-solid fa-magnifying-glass text-secondary" role="button" v-show="!hasSearchMessage"></i>
                                     <form action="">
                                         <input class="form-control me-2" type="search" placeholder="Search messages" aria-label="Search" 
-                                        v-show="hasSearchMessage" v-model.trim="researchMessageText" @input="searchedMessages()">
+                                        v-show="hasSearchMessage" v-model.trim="researchMessageText" >
                                         
                                     </form>
                                 </li>
@@ -119,7 +119,7 @@
                     <!--MESSAGE-AREA-->
                     <div class="message-area d-flex flex-column">
                         <!--MESSAGE-->
-                        <div v-for="message in currentContactMessages"  :class="{sent: message.status ==='sent', received: message.status ==='received'}" class="message-container send">
+                        <div v-for="message in filteredMessages"  :class="{sent: message.status ==='sent', received: message.status ==='received'}" class="message-container send">
                             <div class="d-flex align-items-center justify-content-between">
                                 <p>{{message.text}}</p>
                                 <!--DROP DOWN-->

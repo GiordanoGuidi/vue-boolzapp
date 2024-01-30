@@ -35,6 +35,13 @@ const app = createApp({
         );
         return filteredArray;
       },
+
+      /* MESSAGGI DEL CONTATTO ATTIVO FILTRATI IN BASE AL
+      TESTO SCRITTO NELL'INPUT DI RICERCA MESSAGGI*/
+      filteredMessages() {
+        const searchLowerCase = this.researchMessageText.toLowerCase().trim();
+        return this.currentContactMessages.filter(message => message.text.toLowerCase().includes(searchLowerCase));
+      },
     },
     methods:{
       
@@ -84,17 +91,6 @@ const app = createApp({
         changeHasSearchMessage(){
           this.hasSearchMessage = true;
         },
-
-        //CREO ARRAY CHE FILTRA I MESSAGGI IN BASE AL TESTO DEL MESSAGGIO CERCATO
-        searchedMessages(){
-          const filteredMessage = this.currentContact.messages.filter(message=>
-            (message.text.includes(this.researchMessageText)))
-            if(filteredMessage.length > 0){
-              this.currentContact.messages = filteredMessage
-            }
-        },
-
-
         
         /*TOGGLE HASFULLCONTENT PER MOSTRARE RIGHT O LEFT CONTENT 
         A WIDTH 100% */
