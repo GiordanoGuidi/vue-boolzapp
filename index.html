@@ -105,7 +105,11 @@
                                 <li class="address-book" @click="toggleHasFullContent()"><i class="fa-solid fa-address-book text-secondary" role="button"></i></li>
                                 <li class="d-flex align-items-center" @click="changeHasSearchMessage()">
                                     <i class="fa-solid fa-magnifying-glass text-secondary" role="button" v-show="!hasSearchMessage"></i>
-                                    <input class="form-control me-2" type="search" placeholder="Search messages" aria-label="Search" v-show="hasSearchMessage" v-model.trim="reserchMessageText">
+                                    <form action="">
+                                        <input class="form-control me-2" type="search" placeholder="Search messages" aria-label="Search" 
+                                        v-show="hasSearchMessage" v-model.trim="researchMessageText" @input="searchedMessages()">
+                                        
+                                    </form>
                                 </li>
                                 <li><i class="fa-solid fa-paperclip text-secondary" role="button"></i></li>
                                 <li><i class="fa-solid fa-ellipsis-vertical text-secondary" role="button"></i></li>

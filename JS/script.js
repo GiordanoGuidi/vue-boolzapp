@@ -11,7 +11,7 @@ const app = createApp({
           newMessage:'',
           reserchText:'',
           hasSearchMessage:false,
-          reserchMessageText:'',
+          researchMessageText:'',
           hasFullContent:false
         }
     },
@@ -70,7 +70,7 @@ const app = createApp({
         validMessage(messageId){
           this.currentContact.messages = this.currentContact.messages.filter(message =>
           message.id !== messageId);
-          console.log('Messaggio eliminato:', messageId);
+          console.log('Messaggio eliminato:', messageId,'array messaggi',this.currentContactMessages );
         },
 
         // RECUPERO IL TESTO DELL'ULTIMO MESSAGGIO DEL CONTATTO
@@ -79,16 +79,25 @@ const app = createApp({
           return lastMessage
         },
 
-        //CREO FUNZIONE CHE CAMBIA IL VALORE DI HAS SEARCH MESSAGE
+        /*CREO FUNZIONE CHE CAMBIA IL VALORE DI HAS SEARCH MESSAGE
+        PER MOSTRARE BARRA RICERCA MESSAGGIO*/
         changeHasSearchMessage(){
           this.hasSearchMessage = true;
         },
 
-        //!CREO ARRAY CHE FILTRA IL TESTO DEL MESSAGGIO CERCATO
-        //!(STESSA DIFFICOLTA' DELLA RIMOZIONE MESSAGGIO)
+        //CREO ARRAY CHE FILTRA I MESSAGGI IN BASE AL TESTO DEL MESSAGGIO CERCATO
+        searchedMessages(){
+          const filteredMessage = this.currentContact.messages.filter(message=>
+            (message.text.includes(this.researchMessageText)))
+            if(filteredMessage.length > 0){
+              this.currentContact.messages = filteredMessage
+            }
+        },
+
 
         
-        //TOGGLE HASFULLCONTENT
+        /*TOGGLE HASFULLCONTENT PER MOSTRARE RIGHT O LEFT CONTENT 
+        A WIDTH 100% */
        toggleHasFullContent(){
         this.hasFullContent = !this.hasFullContent
        }
