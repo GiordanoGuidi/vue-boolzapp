@@ -22,7 +22,7 @@
 <body>
     <div id="root" class="d-flex justify-content-center align-items-center">
         <!--MAIN CONTAINER-->
-        <main class="main-container d-flex">
+        <main class="main-container  d-flex">
             <div class="row w-100 h-100">
                 <!--LEFT CONTENT-->
                 <nav class="sidebar col-xl-4 col-md-2 h-100 p-0" :class="{'d-block':hasFullContent}" >
@@ -74,7 +74,7 @@
                                     <div>
                                         <span class="ms-3">{{contact.name}}</span>
                                         <p id="last-message" class="ms-3">{{getLastMessage(contact).text}}</p>
-                                        <!-- <p class="ms-3">sta scrivendo...</p> -->
+                                        <p class="ms-3">sta scrivendo...</p>
                                     </div>
                                     <div class="text-end position-absolute end-0 me-2">
                                         <div id="date-message" class="small-text">{{getLastMessage(contact).date}}</div>
@@ -96,7 +96,7 @@
                             <div class="lh-sm ms-3">
                                 <p>{{currentContact.name}}</p>
                                 <p class="text-secondary">Ultimo accesso oggi alle</p>
-                                <!-- <p v-show="isWriting">sta scrivendo...</p> -->
+                                <p>sta scrivendo...</p>
                             </div>
                             
                         </div>
